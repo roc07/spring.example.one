@@ -7,18 +7,23 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
+
 	<context:property-placeholder location="classpath:sport.properties"/>
 
 	<!--FORTUNES-->
 	<bean id="myFortune"
 		class="com.sport.facility.HappyFortuneService">
 	</bean>
+	
+	<bean id="randomFortune"
+		class="com.sport.facility.RandomFortune">
+	</bean>
 
     <!--COACHES-->
     <bean id="myTrackCoach"
     	class="com.sport.facility.TrackCoach">
     	
-    	<constructor-arg ref="myFortune"/>
+    	<constructor-arg ref="randomFortune"/>
     </bean>
     
     <bean id="myBaseballCoach"
@@ -30,7 +35,7 @@
     <bean id="myCricketCoach"
     	class="com.sport.facility.CricketCoach">
     	
-    	<property name="fortune" ref="myFortune" /> 
+    	<property name="fortune" ref="randomFortune" /> 
     	<property name="mail" value="ok@dot.com" />  
     	<property name="teamName" value="Lion Cubs" /> 	
     </bean> 
@@ -41,7 +46,7 @@
     	<property name="fortune" ref="myFortune" /> 
     	<property name="mail" value="${sport.email}" />  
     	<property name="teamName" value="${testName}" /> 	
-    </bean>    
+    </bean> 
     
 </beans>
 

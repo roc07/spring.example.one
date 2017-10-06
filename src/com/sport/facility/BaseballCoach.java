@@ -18,4 +18,5 @@ public class BaseballCoach implements Coach{
 		return fortune.getFortune();
 	}
 	
+
 }

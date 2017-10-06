@@ -17,5 +17,12 @@ public class TrackCoach implements Coach {
 	public String getDailyFortune() {
 		return ("Track Coach says: " + this.fortune.getFortune());
 	}
-
+	
+	public void exampleInit() {
+		System.out.println("Initializing bean");
+	}
+	
+	public void exampleDestroy() {
+		System.out.println("Destroying bean");
+	}
 }
