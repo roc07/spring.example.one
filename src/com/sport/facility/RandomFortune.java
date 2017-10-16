@@ -2,6 +2,9 @@ package com.sport.facility;
 
 import java.util.Random;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class RandomFortune implements FortuneService {
 
 	private String[] randomFortune = {"Practice more Java!", 
